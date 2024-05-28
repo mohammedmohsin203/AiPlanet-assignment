@@ -39,7 +39,7 @@ const App: React.FC = () => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await axios.post('http://0.0.0.0:8000/upload/', formData, {
+      const response = await axios.post('https://mukul-aiplanet-assignment.onrender.com/upload/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -68,7 +68,7 @@ const App: React.FC = () => {
 
       setLoading(true);
 
-      const response = await axios.post('http://0.0.0.0:8000/ask/', {
+      const response = await axios.post('https://mukul-aiplanet-assignment.onrender.com/ask/', {
         text_id: pdfId,
         question: text
       });

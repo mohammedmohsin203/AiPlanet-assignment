@@ -5,11 +5,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://muku-chat-pdf.netlify.app"
 ]
 
 app.add_middleware(
