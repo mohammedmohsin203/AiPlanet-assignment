@@ -1,12 +1,9 @@
 <h1 align="center" id="title">Chat with PDF using LLM (React, FastAPI & Langchain)</h1>
 
 <h2>🚀 Demo</h2>
-Deployement Link : 
-[https://muku-chat-pdf.netlify.app/](https://muku-chat-pdf.netlify.app/)
-
+Deployement Link : https://muku-chat-pdf.netlify.app/
 <br />
-Demo Video Link : 
-[https://drive.google.com/file/d/1Ubb_VlEEHobux18xwI7IpVSVqvbzEH_0/view?usp=sharing](https://drive.google.com/file/d/1Ubb_VlEEHobux18xwI7IpVSVqvbzEH_0/view?usp=sharing)
+Demo Video Link : https://drive.google.com/file/d/1Ubb_VlEEHobux18xwI7IpVSVqvbzEH_0/view?usp=sharing
 
 
 <h2>🛠️ Installation Steps:</h2>
@@ -66,6 +63,7 @@ Technologies used in the project:
 *   Typescript
 *   Tailwind
 *   Vite
+
     Backend
 *   FastAPI
 *   Langchain
