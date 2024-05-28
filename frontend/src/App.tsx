@@ -1,15 +1,18 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import Logo from './components/Logo';
-import { Circle, CirclePlus, LoaderCircle, SendHorizonalIcon } from 'lucide-react';
+import { CirclePlus, LoaderCircle, SendHorizonalIcon } from 'lucide-react';
 import classNames from 'classnames';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+
+let messages : string[] =  [] ;
 
 const App: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [text, setText] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-  const [pdfId, setPDFId] = useState<number | null>(null);
-  const [answer, setAnswer] = useState<string>('');
+  const [pdfId, setPDFId] = useState<string | null>(null);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setError('');
@@ -29,14 +32,68 @@ const App: React.FC = () => {
   };
 
   const fileUploadHandler = async () => {
-    setLoading(true);
-    setTimeout(() => { }, 5000)
-    // setPDFId(3);
+    try {
+      if (!file) return;
+
+      setLoading(true);
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await axios.post('http://0.0.0.0:8000/upload/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      const data = response.data
+      setPDFId(data.id);
+   
+      toast.success(data.message)
+    }
+    catch (error) {
+      toast.error('Failed to upload')
+      setFile(null);
+    }
+    finally {
+      setLoading(false);
+      setText('');
+    }
   }
 
-  const generateAnswerHandler = () => {
+  const generateAnswerHandler = async () => {
+    console.log(pdfId);
 
+    try {
+      if (!pdfId || text==="") return;
+
+      setLoading(true);
+
+      const response = await axios.post('http://0.0.0.0:8000/ask/', {
+        text_id: pdfId,
+        question: text
+      });
+
+      const data = response.data
+
+      messages.push(text);
+      messages.push(data.answer);
+      toast.success('Answer generated')
+      setText('');
+
+    }
+    catch (error) {
+      toast.error('Failed to generate')
+    }
+    finally {
+      setLoading(false);
+    }
   }
+  
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === 'Enter') {
+      generateAnswerHandler();
+    }
+  };
 
   return (
     <main className='h-screen flex flex-col justify-between'>
@@ -77,24 +134,41 @@ const App: React.FC = () => {
                 <CirclePlus />
                 Upload PDF
               </button>
-
-
         }
       </nav>
 
-      <div className='h-full'>
-
+      <div className='h-full border rounded-md p-5 overflow-y-scroll'>
+        {
+          messages.map((message,index) => {
+            return (
+              <div key={index} className={classNames(' my-8 rounded w-6/7 justify-between items-center p-3')}>
+                <div className=' text-slate-600'>
+                 <span className='flex gap-4'>
+                 {index%2==0 ? 
+                 <div className='bg-purple-400 text-zinc-900 text-xl font-semibold rounded-full h-10 w-10 p-3 flex items-center justify-center'> M </div> 
+                 :
+                 <div className='bg-green-400 text-zinc-900 text-xl font-semibold  rounded-full h-10 w-10 p-3 flex items-center justify-center'> ai </div> 
+                  }
+                  <p>{message}</p>
+                 </span> 
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
 
-      <div className={classNames('flex justify-between md:mx-28 mx-5  my-10 border-slate-300 bg-zinc-50 border h-12 p-2 rounded items-center', loading && 'opacity-50' )}>
+      <div className={classNames('flex justify-between md:mx-28 mx-5  my-10 border-slate-300 bg-zinc-50 border h-12 p-2 rounded items-center', loading && 'opacity-50')}>
 
         <input
           type="text"
           value={text}
           onChange={handleTextChange}
-          className='focus:outline-none w-full bg-transparent'
+          className='focus:outline-none w-full px-4 bg-transparent'
           placeholder='Ask Question...'
           disabled={loading}
+          onKeyDown={handleKeyDown}
+  
         />
 
         {pdfId && loading ?

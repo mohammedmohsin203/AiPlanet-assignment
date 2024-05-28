@@ -30,7 +30,7 @@ async def upload_pdf(file: UploadFile = File(...), db: Session = Depends(get_db)
     except NoCredentialsError:
         raise HTTPException(status_code=500, detail="Credentials not available")
 
-    return {"id": pdf_text.id, "filename": file.filename, "message": "File successfully uploaded and text extracted."}
+    return {"id": int(pdf_text.id), "filename": file.filename, "message": "File successfully uploaded and text extracted."}
 
 @router.post("/ask/", response_model=AnswerResponse)
 async def ask_question(request: QuestionRequest, db: Session = Depends(get_db)):
