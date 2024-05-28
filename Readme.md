@@ -58,13 +58,13 @@ python3 run.py
 
 Technologies used in the project:
 
-    Frontend
+Frontend
 *   React
 *   Typescript
 *   Tailwind
 *   Vite
 
-    Backend
+Backend
 *   FastAPI
 *   Langchain
 *   Postgres
