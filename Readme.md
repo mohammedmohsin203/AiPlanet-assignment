@@ -1,7 +1,13 @@
 <h1 align="center" id="title">Chat with PDF using LLM (React, FastAPI & Langchain) 📄💬</h1>
+<h3>Disclaimer:</h3>
+<p>Due to vercel issues, deploying this site is taking longer than its expected but its absolutely working and also add env file at root folder </p>
+<h2>🚀 Demo</h
 
-<h2>🚀 Demo</h2>
-<p><strong>Deployment Link:</strong> <a href="https://muku-chat-pdf.netlify.app/" target="_blank">Chat with PDF Demo</a> 🌍</p>
+https://github.com/user-attachments/assets/c6ac5c0d-6c60-4fa9-9d9c-4581330457c4
+
+2>
+
+
 <hr>
 
 <h2>🛠️ Installation Steps</h2>
@@ -25,6 +31,16 @@
 <h3>5️⃣ Change to the Backend Directory</h3>
 <p>After setting up the frontend, navigate to the <strong>backend</strong> directory. 📂</p>
 <pre><code>cd ../backend 📂</code></pre>
+
+<h3>5️⃣ Add ENV file</h3>
+<p>
+AWS_ACCESS_KEY_ID=*****************
+AWS_SECRET_ACCESS_KEY=****************
+S3_REGION_NAME=***********
+S3_BUCKET_NAME=************
+DATABASE_URL=************* (MySQL / PostgreSQL)
+GOOGLE_API_KEY=**********************
+</p>
 
 <h3>6️⃣ Create and Activate a Virtual Environment</h3>
 <p>Create a virtual environment if one doesn't exist already. Then, activate it. 🌱</p>
