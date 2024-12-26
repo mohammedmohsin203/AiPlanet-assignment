@@ -1,72 +1,77 @@
-<h1 align="center" id="title">Chat with PDF using LLM (React, FastAPI & Langchain)</h1>
+<h1 align="center" id="title">Chat with PDF using LLM (React, FastAPI & Langchain) 📄💬</h1>
 
 <h2>🚀 Demo</h2>
-Deployement Link : https://muku-chat-pdf.netlify.app/
-<br />
-Demo Video Link : https://drive.google.com/file/d/1Ubb_VlEEHobux18xwI7IpVSVqvbzEH_0/view?usp=sharing
+<p><strong>Deployment Link:</strong> <a href="https://muku-chat-pdf.netlify.app/" target="_blank">Chat with PDF Demo</a> 🌍</p>
+<hr>
 
+<h2>🛠️ Installation Steps</h2>
 
-<h2>🛠️ Installation Steps:</h2>
+<h3>1️⃣ Clone the Project</h3>
+<p>Start by cloning the repository to your local machine. 📂</p>
+<pre><code>git clone &lt;repository_url&gt; 🌍</code></pre>
 
-<p>1. First clone the project</p>
+<h3>2️⃣ Change to the Frontend Directory</h3>
+<p>Navigate to the <strong>frontend</strong> directory. 🖥️</p>
+<pre><code>cd frontend 📁</code></pre>
 
-<p>2. Change to the frontend directory</p>
+<h3>3️⃣ Install Frontend Dependencies</h3>
+<p>Install all the necessary dependencies for the frontend using npm. 📦</p>
+<pre><code>npm install 📦</code></pre>
 
-```
-cd frontend
-```
+<h3>4️⃣ Start the Frontend Development Server</h3>
+<p>Now, you can start the frontend development server, which will run on <strong>localhost:5173</strong>. 🚀</p>
+<pre><code>npm run dev 🚀</code></pre>
 
-<p>3. Install frontend dependencies:</p>
+<h3>5️⃣ Change to the Backend Directory</h3>
+<p>After setting up the frontend, navigate to the <strong>backend</strong> directory. 📂</p>
+<pre><code>cd ../backend 📂</code></pre>
 
-```
-npm install
-```
+<h3>6️⃣ Create and Activate a Virtual Environment</h3>
+<p>Create a virtual environment if one doesn't exist already. Then, activate it. 🌱</p>
+<pre><code>python3 -m venv env 🌱
+source env/bin/activate 🔒</code></pre>
 
-<p>4. Start the frontend development server on localhost:5173</p>
+<h3>7️⃣ Install Backend Dependencies</h3>
+<p>Install the backend dependencies by running: 📜</p>
+<pre><code>pip install -r requirements.txt 📜</code></pre>
 
-```
-npm run dev
-```
+<h3>8️⃣ Start the Backend Server</h3>
+<p>Now, you can start the backend server, which will run on <strong>localhost:8000</strong>. 🖥️</p>
+<pre><code>python3 run.py 🖥️</code></pre>
 
-<p>5. Change to the backend directory</p>
+<hr>
 
-```
-cd ../backend
-```
-
-<p>6. Create and activate a virtual environment (if not already created):</p>
-
-```
-python3 -m venv env source env/bin/activate
-```
-
-<p>7. Install backend dependencies:</p>
-
-```
-pip install -r requirements.txt
-```
-
-<p>8. Start the backend server at localhost:8000</p>
-
-```
-python3 run.py
-```
-
-  
-  
 <h2>💻 Built with</h2>
+<p>The technologies and tools used to build this project are:</p>
 
-Technologies used in the project:
+<h3>Frontend ⚡</h3>
+<ul>
+  <li><strong>React</strong>: JavaScript library for building user interfaces 💻</li>
+  <li><strong>Typescript</strong>: A statically typed superset of JavaScript ⌨️</li>
+  <li><strong>Tailwind CSS</strong>: Utility-first CSS framework for rapidly building custom designs 🎨</li>
+  <li><strong>Vite</strong>: Next-generation, fast build tool for modern web development ⚡</li>
+</ul>
 
-Frontend
-*   React
-*   Typescript
-*   Tailwind
-*   Vite
+<h3>Backend 🖥️</h3>
+<ul>
+  <li><strong>FastAPI</strong>: Fast and efficient web framework for building APIs with Python 🚀</li>
+  <li><strong>Langchain</strong>: A framework for developing applications powered by large language models (LLMs) 🤖</li>
+  <li><strong>PostgreSQL</strong>: Relational database management system for storing data 🗃️</li>
+  <li><strong>Gemini LLM</strong>: Used for language model processing due to OpenAI API credits being exhausted 🌐</li>
+  <li><strong>S3</strong>: Cloud storage service used for storing PDF files ☁️</li>
+</ul>
 
-Backend
-*   FastAPI
-*   Langchain
-*   Postgres
-*   Gemini LLM : As my open ai api credits were exhausted
-*   S3 for storing pdfs"# AiPlanet-assignment" 
+<hr>
+
+<h2>🧑‍💻 Contributing</h2>
+<p>Feel free to contribute to this project by opening issues or submitting pull requests. 🙏</p>
+<p>Please ensure to follow the coding standards and add meaningful commit messages. ✨</p>
+
+<hr>
+
+<h2>📄 License</h2>
+<p>This project is licensed under the MIT License. See the LICENSE file for details. 📜</p>
+
+<hr>
+
+<h2>🎉 Happy coding! 😄</h2>
