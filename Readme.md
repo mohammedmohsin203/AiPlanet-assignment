@@ -1,11 +1,11 @@
 <h1 align="center" id="title">Chat with PDF using LLM (React, FastAPI & Langchain) 📄💬</h1>
 <h3>Disclaimer:</h3>
 <p>Due to vercel issues, deploying this site is taking longer than its expected but its absolutely working and also add env file at root folder </p>
-<h2>🚀 Demo</h
+<h2>🚀 Demo</h2>
+<br/>
 
-https://github.com/user-attachments/assets/c6ac5c0d-6c60-4fa9-9d9c-4581330457c4
 
-2>
+https://github.com/user-attachments/assets/ce13ad29-f06f-40cf-8402-b5b2bada78cb
 
 
 <hr>
