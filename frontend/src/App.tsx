@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const messages: string[] = [];
 
-const API_URL = 'http://0.0.0.0:8000'
+const API_URL = 'http://localhost:8000';
 
 const App: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
